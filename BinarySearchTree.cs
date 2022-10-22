@@ -18,6 +18,7 @@ namespace HashTableAndBST
             rightChildTree = null;
         }
         
+        static int leftCount = 0, rightCount = 0;
 
         public void Insert(T item)
         {
@@ -27,6 +28,7 @@ namespace HashTableAndBST
             {
                 if(leftChildTree == null)
                 {
+                    leftCount++;
                     leftChildTree = new BinarySearchTree<T>(item);
                 }
                 else
@@ -38,6 +40,7 @@ namespace HashTableAndBST
             {
                 if(rightChildTree == null)
                 {
+                    rightCount++;
                     rightChildTree = new BinarySearchTree<T>(item);
                 }
                 else
@@ -46,6 +49,11 @@ namespace HashTableAndBST
                 }
             }
 
+        }
+
+        public void GetSize()
+        {
+            Console.WriteLine("Size of Binary Search Tree: " + (1 + leftCount + rightCount));
         }
 
 
