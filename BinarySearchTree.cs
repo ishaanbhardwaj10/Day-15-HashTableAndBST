@@ -56,6 +56,32 @@ namespace HashTableAndBST
             Console.WriteLine("Size of Binary Search Tree: " + (1 + leftCount + rightCount));
         }
 
+        bool result = false;
+        public bool IfExists(T element, BinarySearchTree<T> node)
+        {
+            if (node == null)
+                return false;
+            if (node.rootNode.NodeData.Equals(element))
+            {
+                Console.WriteLine("Found the element in BST" + " " + node.rootNode.NodeData);
+                result = true;
+            }
+            else
+            {
+                Console.WriteLine("Current element in BST is: {0}", node.rootNode.NodeData);
+            }
+            if(element.CompareTo(node.rootNode.NodeData) < 0)
+            {
+                IfExists(element, node.leftChildTree);
+            }
+            if(element.CompareTo(node.rootNode.NodeData) > 0)
+            {
+                IfExists(element, node.rightChildTree);
+            }
+
+            return result;
+        }
+
 
         public void Display()
         {
