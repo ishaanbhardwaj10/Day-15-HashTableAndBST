@@ -8,6 +8,7 @@
             Console.WriteLine("Welcome to HashTable and Binary Search Tree Problems");
             Console.WriteLine("Use Case #1: Create a Binary Search Tree");
             Console.WriteLine("Use Case #2: Create the Binary Tree shown in figure");
+            Console.WriteLine("Use Case #3: Search 63 in Binary Tree");
 
             Console.Write("Choose a use case number to run the program: ");
             int choice = Convert.ToInt32(Console.ReadLine());
@@ -38,6 +39,23 @@
                     Console.WriteLine("-------------------------------");
                     treeTwo.GetSize();
                     Console.WriteLine("-------------------------------");
+                    break;
+                case 3:
+                    BinarySearchTree<int> treeThree = new BinarySearchTree<int>(56);
+                    treeThree.Insert(30);
+                    treeThree.Insert(70);
+                    treeThree.Insert(22);
+                    treeThree.Insert(40);
+                    treeThree.Insert(60);
+                    treeThree.Insert(95);
+                    treeThree.Insert(11);
+                    treeThree.Insert(65);
+                    treeThree.Insert(3);
+                    treeThree.Insert(16);
+                    treeThree.Insert(63);
+                    treeThree.Insert(67);
+                    bool result = treeThree.IfExists(63, treeThree);
+                    Console.WriteLine(result);
                     break;
                 default:
                     Console.WriteLine("Please enter a valid use case number!");
